@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Modificar evento</title>
+    <meta id="_csrf_header" content="{{headerName}}"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="/js/modifyEvent.js"></script>
+    <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
+
+    <meta charset="UTF-8">
+
+    <link href="/css/styleNewEvent.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="card">
+    <div class="card-block">
+        <h2>Modificar evento</h2>
+        <form action="/admin/events/{{idEvent}}/update" class="reveal-content" method="post" id="form">
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Nombre nuevo" required>
+                <p id="nameFail" class="error"></p>
+            </div>
+
+            <div class="form-group">
+                <textarea name="description" id="description"></textarea>
+                <script>CKEDITOR.replace('description');</script>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="price" name="price" placeholder="Precio nuevo" required>
+                <p id="priceFail" class="error"></p>
+
+            </div>
+
+            <div class="form-group" id="category">
+                <input type="radio"  name="category" value="Restaurante" required> Restaurante &nbsp;&nbsp;
+                <input type="radio"  name="category" value="Ocio" required> Ocio &nbsp;&nbsp;
+                <input type="radio"  name="category" value="Turismo" required> Turismo
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" id="btnModifyEvent">Modificar Evento</button>
+                <button class="btn-link" onclick="location.href = '/events'"> Cancelar</button>
+            </div>
+            <input type="hidden" name="_csrf" value="{{token}}"/>
+        </form>
+    </div>
+</div>
+
+
+</body>
+
+</html>

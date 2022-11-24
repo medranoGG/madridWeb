@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Opinión borrada</title>
+    <meta type="hidden" name="_csrf" value="{{token}}"/>
+    <meta id="_csrf_header" content="{{headerName}}"/>
+    <link href="/css/styleSavedEvent.css" rel="stylesheet"></head>
+</head>
+
+<body>
+<div class="text-center">
+    <h2>La opinión ha sido borrada correctamente: </h2>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-block">
+                    <h2>{{review.userName}}</h2>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <p>{{{review.message}}}</p><br>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" onclick="location.href = '/'">Volver al inicio</button>
+                        <button class="btn btn-primary" onclick="location.href = '/user/perfil'">Volver al perfil</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

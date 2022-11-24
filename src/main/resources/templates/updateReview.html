@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Modificar review</title>
+    <meta id="_csrf_header" content="{{headerName}}"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--<script src="/js/review.js"></script> -->
+    <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
+
+    <meta charset="UTF-8">
+
+    <link href="/css/styleNewEvent.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="card">
+    <div class="card-block">
+        <h2>Modificar review</h2>
+        <form action="/user/event/{{idEvent}}/review/{{idReview}}/update" class="reveal-content" method="post" id="form">
+
+            <div class="form-group">
+                <textarea name="message" id="message"></textarea>
+                <script>CKEDITOR.replace('message');</script>
+                <p id="messageFail" class="error"></p>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" id="btnModifyReview">Modificar Review</button>
+                <button class="btn-link" onclick="location.href = '/events'"> Cancelar</button>
+            </div>
+            <input type="hidden" name="_csrf" value="{{token}}"/>
+        </form>
+    </div>
+</div>
+
+
+</body>
+
+</html>

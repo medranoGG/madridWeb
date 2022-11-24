@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Review</title>
+    <meta type="hidden" name="_csrf" value="{{token}}"/>
+    <meta id="_csrf_header" content="{{headerName}}"/>
+    <link href="/css/styleSavedEvent.css" rel="stylesheet">
+</head>
+<body>
+<div class="text-center">
+    <h2>La review ha sido guardado correctamente: </h2>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="text-center" style="margin-top: 20px">
+                    <h2><u>{{r.userName}}</u></h2>
+                    <div class="text-center" style="margin-left: 20px; margin-right: 20px; margin-bottom: 20px">
+                        <p>{{{r.message}}}</p><br>
+                        <button class="btn btn-primary" onclick="location.href = '/'">Volver al inicio</button>
+                        <button class="btn btn-primary" onclick="location.href = '/events'">Volver a los planes</button>
+                        <button class="btn btn-primary" onclick="location.href = '/user/planning'">Ver tu planning</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

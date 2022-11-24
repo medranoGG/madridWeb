@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Opiniones</title>
+        <meta type="hidden" name="_csrf" value="{{token}}"/>
+        <meta id="_csrf_header" content="{{headerName}}"/>
+        <link href="/css/styleSavedEvent.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- <div
+                class="background-color-layer" style="background-image: url('/images/fire.jpg')">
+        </div> -->
+
+        <header class="white-text-container section-container">
+            <div class="text-center">
+                <h1>OPINIONES</h1>
+            </div>
+        </header>
+
+        {{#reviews}}
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="card">
+                        <div class="card-block">
+                            <h2><u>Usuario:</u> {{userName}}</h2>
+                            <div class="row">
+                                <p>{{{message}}}</p><br>
+                                <button class="btn btn-primary" onclick="location.href = '/user/event/{{idEvent}}/review/{{idReview}}/delete'"> Borrar review</button>
+                                <button class="btn btn-primary" onclick="location.href = '/user/events/{{idEvent}}/review/{{idReview}}/modify'"> Modificar review</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{/reviews}}
+
+        <div style="text-align: center">
+            <img src="/images/oso.jpg" class="img-responsive" alt="" style="margin-left: 750px">
+        </div>
+
+        <div class="text-center">
+            <button class="btn btn-primary" onclick="location.href = '/'">Volver al inicio</button>
+            <button class="btn btn-primary" onclick="location.href = '/events'">Volver a los planes</button>
+            <button class="btn btn-primary" onclick="location.href = '/user/planning'">Ver tu planning</button>
+        </div>
+    </body>
+
+</html>

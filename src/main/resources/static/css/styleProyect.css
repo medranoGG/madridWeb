@@ -1,0 +1,87 @@
+h1{
+    color:red;
+}
+
+h2 {
+    color: Blue;
+    text-align: left;
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+    font-color: Red;
+}
+
+/*Quitamos rellenos por defecto de navegador*/
+*{
+    margin:0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    background: darkslateblue;
+
+}
+
+.browser{
+    width: 1000px;
+    margin: 30px auto;
+    background: aliceblue;
+}
+
+/*LLamo al ul menu y al ul submenu*/
+.browser ul{
+    list-style: none;
+
+}
+
+/*Edito menu, pero no submenu con > li*/
+.menu > li{
+    display: inline-block;
+}
+
+/*LLamamos a los enlaces de los subelementos*/
+.menu >li > a{
+    display: block;
+    padding: 25px 20px;
+    color: darkorange;
+    font-family: 'Copperplate Gothic Bold';
+    text-decoration: none;
+}
+
+/*LLamamos a todos los enlaces tras menu*/
+.menu li a:hover{
+    color: aqua;
+    transition: all 0.35s;
+}
+
+/*Ahora editaremos el submenu de sitios*/
+
+.submenu{
+    position: absolute;
+    background: crimson;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1.25s;
+    /**/
+}
+
+/*Editamos el a del li del submenu*/
+.submenu li a{
+    display: block;
+    padding: 25px;
+    /*width: 120%;*/
+    color: aliceblue;
+    font-family: "Bradley Hand ITC";
+    text-decoration: none ;
+}
+
+/*hover: le da un efecto al submenu*/
+.menu li:hover .submenu{
+    visibility: visible;
+    opacity: 1;
+}

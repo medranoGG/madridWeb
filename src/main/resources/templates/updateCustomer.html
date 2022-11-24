@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Modificar usuario</title>
+    <meta id="_csrf_header" content="{{headerName}}"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--<script src="/js/modifyEvent.js"></script>-->
+    <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
+
+    <meta charset="UTF-8">
+
+    <link href="/css/styleNewEvent.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="card">
+    <div class="card-block">
+        <h2>Modificar usuario</h2>
+        <form action="/admin/customer/update/{{email}}" class="reveal-content" method="post" id="form">
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="name" placeholder="Nombre" required>
+                <p id="nameFail" class="error"></p>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="surname" placeholder="Apellido" required>
+                <p id="surnameFail" class="error"></p>
+            </div>
+
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" placeholder="Email" required>
+                <p id="emailFail" class="error"></p>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="phoneNumber" placeholder="Numero de telefono (000-000-000)" required>
+                <p id="phoneNumberFail" class="error"></p>
+            </div>
+
+            <div class="form-group">
+                <input type="password" class="form-control" name="password" placeholder="Password" required>
+                <p id="passwordFail" class="error"></p>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="address" placeholder="Direccion" required>
+                <p id="addressFail" class="error"></p>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" id="btnNewCustomer">Modificar</button>
+                <button class="btn-link" onclick="location.href = '/'"> Cancelar</button>
+            </div>
+            <input type="hidden" name="_csrf" value="{{token}}"/>
+        </form>
+    </div>
+</div>
+
+
+</body>
+
+</html>
